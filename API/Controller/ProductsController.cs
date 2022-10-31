@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using API.DTOs;
+using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,27 +18,35 @@ namespace API.Controller
         private readonly IGenericRepository<Product> _productRepo;
         private readonly IGenericRepository<ProductType> _productTypeRepo;
         private readonly IGenericRepository<ProductBrand> _productBrandRepo;
+        private readonly IMapper _mapper;
 
-        public ProductsController(IGenericRepository<Product> productRepo, IGenericRepository<ProductType> productTypeRepo, IGenericRepository<ProductBrand> productBrandRepo)
+        public ProductsController(IGenericRepository<Product> productRepo, IGenericRepository<ProductType> productTypeRepo, IGenericRepository<ProductBrand> productBrandRepo, IMapper mapper)
         {
             _productRepo = productRepo;
             _productTypeRepo = productTypeRepo;
             _productBrandRepo = productBrandRepo;
+            _mapper = mapper;
         }
 
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<List<ProductToReturnDto>>> GetProducts()
         {
-            var products = await _productRepo.ListAllAsync();
+            var spec = new ProductWithTypesAndBrandsSpecification();
 
-            return Ok(products);
+            var products = await _productRepo.ListAsync(spec);
+
+            return Ok(_mapper.Map<List<ProductToReturnDto>>(products));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
-            return await _productRepo.GetByIdAsync(id);
+            var spec = new ProductWithTypesAndBrandsSpecification(id);
+
+            var product = await _productRepo.GetEntityWithSpec(spec);
+
+            return _mapper.Map<ProductToReturnDto>(product);
         }
 
         [HttpGet("brands")]
