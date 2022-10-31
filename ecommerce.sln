@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{5E29E6C1-2B4A-4DE7-AF2E-8FDE1EB74195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{E13976B2-5FBB-4C36-B4BA-0B7C4B87A626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{DFE84A12-B3BB-47B3-85EE-7BAB8796F53F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E29E6C1-2B4A-4DE7-AF2E-8FDE1EB74195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E29E6C1-2B4A-4DE7-AF2E-8FDE1EB74195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E29E6C1-2B4A-4DE7-AF2E-8FDE1EB74195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E29E6C1-2B4A-4DE7-AF2E-8FDE1EB74195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E13976B2-5FBB-4C36-B4BA-0B7C4B87A626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13976B2-5FBB-4C36-B4BA-0B7C4B87A626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13976B2-5FBB-4C36-B4BA-0B7C4B87A626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13976B2-5FBB-4C36-B4BA-0B7C4B87A626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE84A12-B3BB-47B3-85EE-7BAB8796F53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE84A12-B3BB-47B3-85EE-7BAB8796F53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE84A12-B3BB-47B3-85EE-7BAB8796F53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE84A12-B3BB-47B3-85EE-7BAB8796F53F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FB051FF-6647-40F8-838C-CCA2D06912AC}
+	EndGlobalSection
+EndGlobal
